@@ -43,4 +43,12 @@ test.describe('User login to SauceDemo', () => {
     //Assert
     await expect(page.locator('[data-test="error"]')).toHaveText(errorLoginId);
   });
+  test('unsuccesfull login with no credencials', async ({ page }) => {
+    //Arrange
+    const errorEmptyUserId = 'Epic sadface: Username is required'; 
+    //Act
+    await page.locator('#login-button').click();
+    //Assert
+    await expect(page.locator('[data-test="error"]')).toHaveText(errorEmptyUserId);
+  });
 });
