@@ -93,4 +93,20 @@ test.describe('Checkout tests', () => {
       errorPostalCode
     );
   });
+  test('quick purchase with blank form fields', async ({ page }) => {
+    //Arrange
+    const userId = loginData.userId;
+    const userPassword = loginData.userPassword;
+    const errorFirstName = 'Error: First Name is required';
+    //Act
+    await page.locator('#user-name').fill(userId);
+    await page.locator('#password').fill(userPassword);
+    await page.locator('#login-button').click();
+    await page.locator('#add-to-cart-sauce-labs-backpack').click();
+    await page.locator('#shopping_cart_container').click();
+    await page.locator('#checkout').click();
+    await page.locator('#continue').click();
+    //Assert
+    await expect(page.locator('[data-test="error"]')).toHaveText(errorFirstName);
+  });
 });
