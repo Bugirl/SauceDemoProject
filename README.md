@@ -18,5 +18,5 @@
 - viewing report  
 `npx playwright show-report`
 
-## Thanks for reading 
+## Thanks for reading :blush:
 
