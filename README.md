@@ -1,5 +1,6 @@
 # Saucedemo testing project
 ### This is a project created to practice my Playwright test automation skills.
+### (It's still under construction :wink:)
 ## Links
 - test site
  https://www.saucedemo.com/
